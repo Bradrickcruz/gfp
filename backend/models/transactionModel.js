@@ -13,11 +13,11 @@ const transactionModel = mongoose.Schema({
     type: Number,
     required: true,
   },
-  TransactionType: {
+  transactionType: {
     type: String,
     required: true,
   },
-  TransactionTypeCategory: {
+  transactionTypeCategory: {
     type: String,
     required: true,
   },

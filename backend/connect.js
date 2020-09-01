@@ -8,7 +8,9 @@ const dbURL_Atlas = `mongodb+srv://rick:${pw}@ricktest.ncqqs.gcp.mongodb.net/${d
 try {
   mongoose.connect(dbURL_Atlas, {
     useNewUrlParser: true,
+    useUnifiedTopology: true,
   });
+  mongoose.set('useFindAndModify', false);
   console.log('MongoDB ativo');
 } catch (error) {
   console.log({ error: error });

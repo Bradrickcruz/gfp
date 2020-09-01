@@ -5,20 +5,22 @@ import incomeCategoryModel from './models/incomeCategoryModel.js';
 import expenseCategoryModel from './models/expenseCategoryModel.js';
 import transactionModel from './models/transactionModel.js';
 
+import MainRouter from './routes/MainRouter.js';
+import TransactionRouter from './routes/TransactionRouter.js';
+import PaymentFormatRouter from './routes/PaymentFormatRouter.js';
+
 const app = express();
 const PORT = 3030;
 
 app.use(express.json());
+app.use('/', MainRouter);
+app.use('/transaction', TransactionRouter);
+app.use('/payment', PaymentFormatRouter);
 
-async function testMongo() {
-  console.log(await paymentFormatModel.find({}));
-  console.log(await incomeCategoryModel.find({}));
-  console.log(await expenseCategoryModel.find({}));
-  console.log(await transactionModel.find({}));
+try {
+  app.listen(PORT, () => {
+    console.log('API iniciada');
+  });
+} catch (error) {
+  console.log({ Error: error });
 }
-
-// testMongo();
-
-// app.listen(PORT, () => {
-//   console.log('API iniciada');
-// });
