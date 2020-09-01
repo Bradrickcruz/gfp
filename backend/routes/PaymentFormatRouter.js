@@ -48,6 +48,7 @@ router.post('/newpaymentformat', async (req, res) => {
 
   try {
     let newPaymentFormat = await new paymentFormatModel(docBody);
+    await newPaymentFormat.save();
     res.send({ newDoc: newPaymentFormat });
   } catch (error) {
     res.status(500).send({ error: error });
