@@ -1,9 +1,11 @@
 import React from 'react';
 
+import Title from '../../components/Title';
+
 export default function Home() {
   return (
-    <div>
-      <h1>GFP</h1>
-    </div>
+    <>
+      <Title>GFP</Title>
+    </>
   );
 }
