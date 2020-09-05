@@ -66,7 +66,7 @@ const deleteIncomeCategory = async (req, res) => {
   }
 }
 
-export default {
+export {
   findOneIncomeCategory,
   findIncomeCategoryByField,
   updateIncomeCategory,

@@ -66,7 +66,7 @@ const deleteExpenseCategory = async (req, res) => {
   }
 };
 
-export default {
+export {
   findOneExpenseCategory,
   FindExpenseCategoryByField,
   updateExpenseCategory,

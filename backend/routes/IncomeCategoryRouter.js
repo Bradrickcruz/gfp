@@ -11,14 +11,14 @@ const router = express.Router();
 
 router.use(express.json());
 
-router.get('/findone/:id', findOneIncomeCategory());
+router.get('/findone/:id', findOneIncomeCategory);
 
-router.get('/findbyfield/:field/:search', findIncomeCategoryByField());
+router.get('/findbyfield/:field/:search', findIncomeCategoryByField);
 
-router.post('/updatecategory/:id', updateIncomeCategory());
+router.post('/updatecategory/:id', updateIncomeCategory);
 
-router.post('/newcategory', createIncomeCategory());
+router.post('/newcategory', createIncomeCategory);
 
-router.delete('/deletecategory/:id', deleteIncomeCategory());
+router.delete('/deletecategory/:id', deleteIncomeCategory);
 
 export default router;

@@ -11,14 +11,14 @@ const router = express.Router();
 
 router.use(express.json());
 
-router.get('/findone/:id', findOneExpenseCategory());
+router.get('/findone/:id', findOneExpenseCategory);
 
-router.get('/findbyfield/:field/:search', FindExpenseCategoryByField());
+router.get('/findbyfield/:field/:search', FindExpenseCategoryByField);
 
-router.post('/updatecategory/:id', updateExpenseCategory());
+router.post('/updatecategory/:id', updateExpenseCategory);
 
-router.post('/newcategory', createExpenseCategory());
+router.post('/newcategory', createExpenseCategory);
 
-router.delete('/deletecategory/:id', deleteExpenseCategory());
+router.delete('/deletecategory/:id', deleteExpenseCategory);
 
 export default router;

@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const db = 'gfp';
 const pw = 'rick';
 // const dbURL = `mongodb://localhost:27017/${db}`; <- URL local
+// TODO: fazer vir por variavel do sistema
 const dbURL_Atlas = `mongodb+srv://rick:${pw}@ricktest.ncqqs.gcp.mongodb.net/${db}?retryWrites=true&w=majority`;
 
 try {
