@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  findAllExpenseCategories,
   findOneExpenseCategory,
   FindExpenseCategoryByField,
   updateExpenseCategory,
@@ -10,6 +11,8 @@ import {
 const router = express.Router();
 
 router.use(express.json());
+
+router.get('/findall', findAllExpenseCategories);
 
 router.get('/findone/:id', findOneExpenseCategory);
 

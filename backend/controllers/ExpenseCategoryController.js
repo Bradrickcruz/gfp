@@ -1,5 +1,14 @@
 import expenseCategoryModel from '../models/expenseCategoryModel.js';
 
+const findAllExpenseCategories = async (req, res) =>{
+  try {
+    let allDocs = await expenseCategoryModel.find({})
+    res.send({docs: allDocs})
+  } catch (error) {
+    res.status(500).send({error: error})
+  }
+}
+
 // retorna uma categoria pelo id
 const findOneExpenseCategory = async (req, res) => {
   const { id } = req.params;
@@ -67,6 +76,7 @@ const deleteExpenseCategory = async (req, res) => {
 };
 
 export {
+  findAllExpenseCategories,
   findOneExpenseCategory,
   FindExpenseCategoryByField,
   updateExpenseCategory,

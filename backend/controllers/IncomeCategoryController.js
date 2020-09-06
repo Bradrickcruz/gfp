@@ -1,5 +1,14 @@
 import incomeCategoryModel from '../models/incomeCategoryModel.js';
 
+const findAllIncomeCategories = async (req, res) => {
+  try {
+    let allDocs = await incomeCategoryModel.find({});
+    res.send({ docs: allDocs });
+  } catch (error) {
+    res.status(500).send({ error: error });
+  }
+};
+
 // retorna uma categoria pelo id
 const findOneIncomeCategory = async (req, res) => {
   const { id } = req.params;
@@ -10,7 +19,7 @@ const findOneIncomeCategory = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // retorna uma ou mais categorias pelo field e search
 const findIncomeCategoryByField = async (req, res) => {
@@ -23,7 +32,7 @@ const findIncomeCategoryByField = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // atualiza uma category
 const updateIncomeCategory = async (req, res) => {
@@ -40,7 +49,7 @@ const updateIncomeCategory = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // cria uma nova categoria
 const createIncomeCategory = async (req, res) => {
@@ -53,7 +62,7 @@ const createIncomeCategory = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // deleta uma category
 const deleteIncomeCategory = async (req, res) => {
@@ -64,12 +73,13 @@ const deleteIncomeCategory = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 export {
+  findAllIncomeCategories,
   findOneIncomeCategory,
   findIncomeCategoryByField,
   updateIncomeCategory,
   createIncomeCategory,
-  deleteIncomeCategory
-}
+  deleteIncomeCategory,
+};

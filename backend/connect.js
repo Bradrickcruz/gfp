@@ -1,13 +1,11 @@
 import mongoose from 'mongoose';
+import 'dotenv/config.js';
 
-const db = 'gfp';
-const pw = 'rick';
-// const dbURL = `mongodb://localhost:27017/${db}`; <- URL local
-// TODO: fazer vir por variavel do sistema
-const dbURL_Atlas = `mongodb+srv://rick:${pw}@ricktest.ncqqs.gcp.mongodb.net/${db}?retryWrites=true&w=majority`;
+const URL = process.env.DB_URL || 'mongodb://localhost:27017/$gfp';
+
 
 try {
-  mongoose.connect(dbURL_Atlas, {
+  mongoose.connect(URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

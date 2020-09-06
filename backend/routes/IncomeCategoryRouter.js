@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  findAllIncomeCategories,
   findOneIncomeCategory,
   findIncomeCategoryByField,
   updateIncomeCategory,
@@ -10,6 +11,8 @@ import {
 const router = express.Router();
 
 router.use(express.json());
+
+router.get('/findall', findAllIncomeCategories);
 
 router.get('/findone/:id', findOneIncomeCategory);
 

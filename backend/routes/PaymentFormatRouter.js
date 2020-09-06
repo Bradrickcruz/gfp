@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  findAllPaymentFormats,
   findOnePaymentFormat,
   findPaymentFormatByLabel,
   updatePaymentFormat,
@@ -10,6 +11,8 @@ import {
 const router = express.Router();
 
 router.use(express.json());
+
+router.get('/findall', findAllPaymentFormats);
 
 router.get('/findone/:id', findOnePaymentFormat);
 

@@ -1,5 +1,14 @@
 import paymentFormatModel from '../models/paymentFormatModel.js';
 
+const findAllPaymentFormats = async (req, res) => {
+  try {
+    let allDocs = await paymentFormatModel.find({});
+    res.send({ docs: allDocs });
+  } catch (error) {
+    res.status(500).send({ error: error });
+  }
+};
+
 // retorna uma forma de pagamento pelo id
 const findOnePaymentFormat = async (req, res) => {
   const { id } = req.params;
@@ -10,7 +19,7 @@ const findOnePaymentFormat = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // retorna uma ou mais formas de pagamento pelo field e search
 const findPaymentFormatByLabel = async (req, res) => {
@@ -23,7 +32,7 @@ const findPaymentFormatByLabel = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // atualiza uma forma de pagamento
 const updatePaymentFormat = async (req, res) => {
@@ -40,7 +49,7 @@ const updatePaymentFormat = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // cria uma nova forma de pagamento
 const createPaymentFormat = async (req, res) => {
@@ -53,7 +62,7 @@ const createPaymentFormat = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 // deleta uma forma de pagamento
 const deletePaymentFormat = async (req, res) => {
@@ -64,12 +73,13 @@ const deletePaymentFormat = async (req, res) => {
   } catch (error) {
     res.status(500).send({ error: error });
   }
-}
+};
 
 export {
+  findAllPaymentFormats,
   findOnePaymentFormat,
   findPaymentFormatByLabel,
   updatePaymentFormat,
   createPaymentFormat,
-  deletePaymentFormat
-}
+  deletePaymentFormat,
+};
