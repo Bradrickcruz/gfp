@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import 'chart.js'
 
 import Title from '../../components/Title';
-import Chart from '../../components/Chart';
+import TransactionCard from '../../components/TransactionCard';
 
 import transactionService from '../../Services/transactionService.js';
 
 export default function Home() {
   const [allTransactions, setAllTransactions] = useState([]);
-  const [firstChart,setFirstChart] = useState(new Chart(null,{}))
 
   
 
@@ -30,7 +28,6 @@ export default function Home() {
       {allTransactions.map((transaction) => (
         <div>{transaction.description}</div>
       ))}
-      <Chart id='myChart'>{firstChart}</Chart>
     </>
   );
 }
