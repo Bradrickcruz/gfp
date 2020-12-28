@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const URL = 'http://localhost:3030';
 
-console.log(URL);
+// console.log(URL);
 
 const getAllTransactions = async () => {
   try {

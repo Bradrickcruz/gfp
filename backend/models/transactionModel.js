@@ -29,10 +29,14 @@ const transactionModel = mongoose.Schema({
     type: Number,
     required: true,
   },
-  date: {
+  transactionDate: {
     type: Date,
     required: true,
   },
+  createdDate: {
+    type: Date,
+    default: new Date(),
+  }
 });
 
 export default mongoose.model(
