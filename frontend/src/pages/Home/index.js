@@ -68,9 +68,6 @@ export default function Home() {
           <div key={i}>{transaction.description}</div>
         ))}
       </div>
-      {allTransactions.map((transaction) => (
-        <div>{transaction.description}</div>
-      ))}
     </>
   );
 }
