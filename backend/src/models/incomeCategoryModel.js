@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const incomeCategoryModel = mongoose.Schema({
   label: {
@@ -12,7 +12,7 @@ const incomeCategoryModel = mongoose.Schema({
 });
 
 export default mongoose.model(
-  'incomeCategoryModel',
+  "incomeCategoryModel",
   incomeCategoryModel,
-  'income_categories'
+  "income_categories"
 );

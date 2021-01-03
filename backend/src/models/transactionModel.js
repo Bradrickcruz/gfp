@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const transactionModel = mongoose.Schema({
   description: {
@@ -10,6 +10,9 @@ const transactionModel = mongoose.Schema({
     required: true,
   },
   partsQuantity: {
+    type: Number,
+  },
+  part: {
     type: Number,
     required: true,
   },
@@ -36,11 +39,11 @@ const transactionModel = mongoose.Schema({
   createdDate: {
     type: Date,
     default: new Date(),
-  }
+  },
 });
 
 export default mongoose.model(
-  'transactionModel',
+  "transactionModel",
   transactionModel,
-  'transactions'
+  "transactions"
 );

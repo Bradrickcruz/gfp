@@ -1,4 +1,4 @@
-import paymentFormatModel from '../models/paymentFormatModel.js';
+import paymentFormatModel from "../models/paymentFormatModel.js";
 
 const findAllPaymentFormats = async (req, res) => {
   try {

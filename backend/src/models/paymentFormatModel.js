@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 const paymentFormatModel = new mongoose.Schema({
   label: { type: String, required: true },
@@ -6,7 +6,7 @@ const paymentFormatModel = new mongoose.Schema({
 });
 
 export default mongoose.model(
-  'paymentFormatModel',
+  "paymentFormatModel",
   paymentFormatModel,
-  'payment_formats'
+  "payment_formats"
 );

@@ -1,4 +1,4 @@
-import incomeCategoryModel from '../models/incomeCategoryModel.js';
+import incomeCategoryModel from "../models/incomeCategoryModel.js";
 
 const findAllIncomeCategories = async (req, res) => {
   try {
